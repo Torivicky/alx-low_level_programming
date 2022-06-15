@@ -8,17 +8,17 @@
 
 char *cap_string(char *str)
 {
-	int i, b;
+	int i, c;
 	int trigger;
-	char pots[] = ",;.!?(){}\p\t\" ";
+	char nots[] = ",;.!?(){}\n\t\" ";
 
 	for (i = 0, trigger = 0; str[i] != '\0'; i++)
 	{
 		if (str[0] > 96 && str[0] < 123)
 			trigger = 1;
-		for (b = 0; pots[b] != '\0'; b++)
+		for (c = 0; nots[c] != '\0'; c++)
 		{
-			if (pots[b] == str[i])
+			if (nots[c] == str[i])
 				trigger = 1;
 		}
 
